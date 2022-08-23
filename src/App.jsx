@@ -14,7 +14,7 @@ export const App = () => {
       </header>
 
       <main>
-        <ItemListContainer />
+        <ItemListContainer productos={"Productos"} />
       </main>
     </>
   )
