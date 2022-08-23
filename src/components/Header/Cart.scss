@@ -1,0 +1,14 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.contador {
+    position: absolute;
+    font-size: 18px;
+    top: 0;
+    left: 30;
+    right: 0;
+    bottom: 0;
+    color: $colorNaranja;
+
+    @include media-up (768px) {}
+}

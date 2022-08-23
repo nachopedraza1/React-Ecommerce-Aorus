@@ -1,0 +1,18 @@
+@mixin flex ($direct,$just,$aling,$wrap) {
+    display: flex;
+    justify-content: $just;
+    align-items: $aling;
+    flex-wrap: $wrap;
+}
+
+@mixin media-up($medida) {
+    @media screen and (min-width: ($medida)){
+        @content;
+    }
+}
+
+@mixin media-dw($medida) {
+    @media screen and (max-width: ($medida)){
+        @content;
+    }
+}

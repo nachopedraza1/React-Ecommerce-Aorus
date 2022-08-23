@@ -1,0 +1,14 @@
+@import "../src/scss/variables";
+
+@font-face {
+    font-family: Aldrich;
+    src: url("./assets/Fonts/Aldrich-Regular.ttf");
+}
+
+.f-ars{
+    font-family: Aldrich;
+}
+
+body{
+    background-color: $backgraund;
+}
