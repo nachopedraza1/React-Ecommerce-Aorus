@@ -1,0 +1,45 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.thumb {
+    position: relative;
+    width: 100%;
+    padding-bottom: 80%;
+}
+
+.img-back {
+    background: linear-gradient(#FFFFFF, #D6D6D6);
+}
+
+.column-custom {
+    width: 48%;
+    display: flex;
+    align-items: center;
+
+    @include media-up(576px) {
+        width: 40%;
+    }
+
+    @include media-up(768px) {
+        width: 45%;
+    }
+
+    @include media-up(992px) {
+        width: 32%;
+    }
+
+    @include media-up(1200px) {
+        width: 30%;
+    }
+}
+
+.img-contained {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
