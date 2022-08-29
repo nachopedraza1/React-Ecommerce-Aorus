@@ -10,6 +10,10 @@ export const ItemCount = ({ cantidad }) => {
         itemCount > 0 ? setItemCount(itemCount - 1) : null;
     }
 
+    const onAdd = () => {
+        console.log(itemCount)
+    }
+
     return (
         <>
             <button className="d-flex justify-content-center">
@@ -17,7 +21,7 @@ export const ItemCount = ({ cantidad }) => {
                 <span> {itemCount} </span>
                 <i onClick={onSubtItem} className="bi bi-dash-circle-fill px-3"></i>
             </button>
-            <button className="btn btn-primary" >Añadir</button>
+            <button className="btn btn-primary" onClick={onAdd}>Añadir</button>
         </>
 
     )
