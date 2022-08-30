@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ProductCard } from "./ProductCard";
+import { Item } from "./Item";
 import "../Main/ItemListContainer.scss"
 
 const getData = async () => {
@@ -21,8 +21,10 @@ const getData = async () => {
 export const ItemListContainer = () => {
 
   useEffect(() => {
-    getData()
-      .then(newProducts => setProductos(newProducts));
+    setTimeout(() => {
+      getData()
+        .then(newProducts => setProductos(newProducts));
+    }, 2000);
   }, [])
 
   const [productos, setProductos] = useState([])
@@ -30,7 +32,7 @@ export const ItemListContainer = () => {
   return (
     <div className="flex-custom justify-content-center p-0">
       {productos.map(producto => {
-        return <ProductCard producto={producto} />
+        return <Item item={producto} key={producto.id} />
       })}
     </div>
   )
