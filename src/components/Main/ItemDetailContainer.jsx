@@ -8,7 +8,6 @@ export const ItemDetailContainer = () => {
   const [itemDetail, setItemDetail] = useState([]);
 
   const { detailId } = useParams();
-  console.log(detailId);
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,7 +24,7 @@ export const ItemDetailContainer = () => {
     <div>
       {
         itemDetail.map(producto => {
-          return <ItemDetail item={producto} />
+          return <ItemDetail item={producto} key={producto.id} />
         })
       }
     </div>
