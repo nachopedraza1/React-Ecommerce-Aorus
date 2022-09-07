@@ -1,5 +1,5 @@
 import "../Main/Item.scss"
-import { ItemDetailContainer } from "./ItemDetailContainer"
+import {  Link, } from "react-router-dom";
 
 export const Item = ({ item }) => {
 
@@ -13,10 +13,11 @@ export const Item = ({ item }) => {
         <h3 className="card-title">${item.precio}</h3>
         <p className="card-text text-center"> {item.nombre} </p>
         <p className="card-text">Cantidad: {item.cantidad} </p>
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target={`#modal${item.id}`}>
-          Comprar
-        </button>
-        <ItemDetailContainer item={item} />
+        <Link to={`/productos/${item.id}`}>
+          <button type="button" className="btn btn-primary">
+            Comprar
+          </button>
+        </Link>
       </div>
     </div>
   )
