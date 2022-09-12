@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
-import { UseFilter } from '../../Hooks/UseFilter';
 import './Filter.scss';
 
 export const Filter = () => {
 
-    const { onFilter } = UseFilter();
+
 
     return (
         <div className='acordion-container px-3'>
