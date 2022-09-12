@@ -1,6 +1,6 @@
-import { ItemCount } from "./ItemCount"
+import { ItemCount } from "./ItemCount";
 
-export const ItemDetail = ( {item} ) => {
+export const ItemDetail = ( {producto} ) => {
 
     const onAdd = (itemCount) => {
         console.log(itemCount);
@@ -8,10 +8,10 @@ export const ItemDetail = ( {item} ) => {
 
     return (
         <div>
-            <img src={item.img} alt="" width="30%" />
-            <h1> {item.nombre} </h1>
-            <h1> Cantidad Disponible: {item.cantidad} </h1>
-            <ItemCount cantidad={item} onAdd={onAdd} />
+            <img src={producto.img} alt="" width="30%" />
+            <h1> {producto.nombre} </h1>
+            <h1> Cantidad Disponible: {producto.cantidad} </h1>
+            <ItemCount cantidad={producto} onAdd={onAdd} />
         </div>
     )
 }

@@ -1,33 +1,34 @@
 import { useEffect, useState } from "react";
 import { Item } from "./Item";
 import "../Main/ItemListContainer.scss"
-import { getData } from "../Helpers/GetData";
 import { useParams } from "react-router-dom";
-
+import { useProductsContext } from "../../Context/ProductosProvider";
+import { Filter } from "./Filter";
 
 export const ItemListContainer = () => {
 
-  const [productos, setProductos] = useState([])
+  const getProductos = useProductsContext();
+
+  const [productos, setProductos] = useState([]);
 
   const { categoryId } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      getData()
-        .then(productos => {
-          const itemCategory = productos.filter(producto => producto.categoria == categoryId);
-          setProductos(itemCategory);
-        });
-    }, 2000);
+    const item = getProductos.filter(producto => producto.categoria == categoryId);
+    setProductos(item);
   }, [categoryId])
 
-
-
   return (
-    <div className="container flex-custom justify-content-center p-0">
-      {productos.map(producto => {
-        return <Item item={producto} key={producto.id} />
-      })}
+    <div className="container-items pt-4">
+      <h1 className="pt-5 text-center text-danger f-ars">{categoryId}</h1>
+      <Filter />
+      <div className="container flex-custom justify-content-center p-0">
+        {
+          productos.map(producto => {
+            return <Item item={producto} key={producto.id} />
+          })
+        }
+      </div>
     </div>
   )
 }

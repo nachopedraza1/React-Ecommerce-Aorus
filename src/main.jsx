@@ -1,5 +1,5 @@
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/scss/bootstrap.scss'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import * as bootstrap from 'bootstrap'
 import React from 'react'

@@ -4,20 +4,24 @@
 .top-nav {
     height: 95px;
     z-index: 999;
-
-    .logo {
-        min-width: 130px;
-        max-width: 160px;
-        margin: 0 10px;
-    }
-}
-
-nav {
     background: linear-gradient(180deg, #000, transparent);
     position: fixed;
     width: 100%;
     line-height: 60px;
+
+    .logo {
+        width: 106px;
+        height: 25px;
+        margin: 0 10px;
+        
+
+        @include media-up(992px) {
+            width: 153px;
+            height: 36px;
+        }
+    }
 }
+
 
 .banner-bg-cover {
     position: absolute;
@@ -31,13 +35,27 @@ nav {
 
 .menu {
     position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 40px;
     background-color: $backgraund;
     margin-left: -100%;
     list-style: none;
     transition: all 0.3s;
-    padding-top: 200px;
-    width: 65%;
-    padding: 0;
+    width: 100%;
+    max-width: 550px;
+    height: 100vh;
+
+    li {
+        font-size: 1rem;
+        line-height: 50px;
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 0px 10px;
+        }
+    }
 
     @include media-up(992px) {
         background-color: transparent;
@@ -49,47 +67,53 @@ nav {
         margin-left: 0;
         margin: 0;
         padding-top: 0px;
+        height: auto;
     }
 
-    li {
-        padding: 15px;
-        font-size: 0.9rem;
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-    }
 
     .subMenu {
-        width: 100%;
-        position: fixed;
-        top: -100%;
-        right: 0;
-        background-color: rgba(0, 0, 0, .87);
-        text-align: center;
-
-        .subMenu-content {
-            width: calc(100% - 130px);
-            min-height: 200px;
-            padding-top: 90px;
-            margin: 0 auto;
-            padding-bottom: 15px;
+        padding-left: 25px;
+        a {
+            text-decoration: none;
+            color: #ffffff;
         }
 
-        .subMenu-content>div {
-            display: inline-block;
-            max-width: 150px;
+        @include media-up(992px) {
+            padding-left: 0;
+            width: 100%;
+            position: fixed;
+            display: block;
+            top: -100%;
+            right: 0;
+            background-color: rgba(0, 0, 0, .87);
+            text-align: center;
+            transition: all 0.5s;
+            z-index: -1;
 
-            img {
-                width: 135px;
-                height: 135px;
+
+            .subMenu-content {
+                width: calc(100% - 130px);
+                min-height: 200px;
+                padding-top: 90px;
+                margin: 0 auto;
+                padding-bottom: 15px;
+
+                div {
+                    display: inline-block;
+                    max-width: 150px;
+
+                    img {
+                        width: 135px;
+                        height: 135px;
+                    }
+                }
             }
         }
     }
 
     .subMenu-active {
         top: 0px;
+        transition: all 0.5s;
     }
 }
 
@@ -98,7 +122,7 @@ nav {
 }
 
 .hamburger {
-    padding: 15px 15px;
+    padding: 0px;
     display: inline-block;
     cursor: pointer;
     transition-property: opacity, filter;
@@ -129,8 +153,8 @@ nav {
 }
 
 .hamburger-box {
-    width: 30px;
-    height: 24px;
+    width: 19px;
+    height: 20px;
     display: inline-block;
     position: relative;
 }
@@ -144,7 +168,7 @@ nav {
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-    width: 24px;
+    width: 19px;
     height: 3px;
     background-color: #ffffff;
     border-radius: 1px;
@@ -161,11 +185,11 @@ nav {
 }
 
 .hamburger-inner::before {
-    top: -7px;
+    top: -6px;
 }
 
 .hamburger-inner::after {
-    bottom: -7px;
+    bottom: -6px;
 }
 
 .hamburger--squeeze .hamburger-inner {

@@ -1,19 +1,20 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import "../Main/Item.scss"
 export const Item = ({ item }) => {
 
+  const { categoryId } = useParams();
 
   return (
-    <div className="card column-custom">
-      <div className="thumb img-back">
+    <div className="item-container column-custom">
+      <div className="thumb">
         <img src={item.img} className="img-contained p-2" alt="" />
       </div>
-      <div className="w-100 h-100 p-1 bg-white d-flex flex-column justify-content-between">
-        <h3 className="card-title">${item.precio}</h3>
-        <p className="card-text text-center"> {item.nombre} </p>
-        <p className="card-text">Cantidad: {item.cantidad} </p>
-        <Link to={`/productos/${item.id}`}>
-          <button className="btn btn-primary">Ver Detalle</button>
+      <div className="item-text w-100 h-100">
+        <h3 className="text-center fs-5">${item.precio}</h3>
+        <p className="fs-5"> {item.nombre} </p>
+        <Link to={`/categoria/${categoryId}/${item.nombre}`}>
+          <button className="btn-detail mx-1">DETAIL</button>
+          <button className="btn-compra mx-1">COMPRAR</button>
         </Link>
       </div>
     </div>

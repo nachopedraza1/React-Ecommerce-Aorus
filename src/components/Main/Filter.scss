@@ -1,0 +1,51 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+
+.acordion-container {
+    p {
+        color: white;
+        text-decoration: none;
+    }
+
+    .filter-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #151515;
+
+        h1 {
+            font-family: Aldrich;
+            font-size: 16px;
+            margin: 0 15px;
+            color: white;
+        }
+
+        span {
+            position: relative;
+            display: inline-block;
+            line-height: 40px;
+            width: 1px;
+            height: 25px;
+            margin: 10px 15px;
+            background: #fff;
+        }
+
+        .btn-sort {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            height: auto;
+            min-height: 35px;
+            width: 100%;
+            text-align: center;
+            transition: all .3s;
+            border: 1px solid #666;
+            color: #666;
+            font-size: 0.7rem;
+            background-color: transparent;
+            padding: 0px 5px;
+            margin: 0px 15px;
+        }
+    }
+}
