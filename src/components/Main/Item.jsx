@@ -1,7 +1,5 @@
 import "../Main/Item.scss"
 import { Link, useParams } from "react-router-dom"
-import { useContext } from "react";
-import { CartContext } from "../../Context/CartProvider";
 
 export const Item = ({ item }) => {
 

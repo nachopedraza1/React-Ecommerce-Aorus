@@ -4,10 +4,18 @@ import { CartContext } from '../../Context/CartProvider'
 
 export const CartContainer = () => {
 
+    const { inCart } = useContext(CartContext);
+
 
     return (
         <div>
-            Carrito
+            {inCart.map(producto => {
+                return (
+                    <div>
+                        <p> {producto.nombre} </p>
+                    </div>
+                )
+            })}
         </div>
     )
 }

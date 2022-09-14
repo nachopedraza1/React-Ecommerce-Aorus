@@ -8,7 +8,7 @@ export const ItemDetail = ({ producto }) => {
 
     const onAdd = (count) => {
         const newProduct = { ...producto, quantity: count }
-        onAddCart(newProduct)
+        onAddCart(newProduct, count)
     }
 
     return (
