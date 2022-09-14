@@ -7,7 +7,6 @@ export function useProductsContext (){
     return useContext(ProductosContext)
 }
 
-
 export const ProductosProvider = (props) => {
 
     const [productos, setProductos] = useState([]);

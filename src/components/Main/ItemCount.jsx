@@ -1,13 +1,12 @@
 import { useState } from "react"
-import { Link } from "react-router-dom";
 
 export const ItemCount = ({ cantidad, onAdd}) => {
-    const [itemCount, setItemCount] = useState(0);
+    const [itemCount, setItemCount] = useState(1);
     const onAddItem = () => {
         cantidad.cantidad > itemCount ? setItemCount(itemCount + 1) : null;
     }
     const onSubtItem = () => {
-        itemCount > 0 ? setItemCount(itemCount - 1) : null;
+        itemCount > 1 ? setItemCount(itemCount - 1) : null;
     }
 
     return (

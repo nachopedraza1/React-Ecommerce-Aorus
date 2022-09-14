@@ -1,6 +1,6 @@
+import './NavBar.scss';
 import { useState } from "react";
 import { Cart } from "./Cart";
-import './NavBar.scss';
 import { Link, NavLink } from "react-router-dom";
 
 export const NavBar = () => {
