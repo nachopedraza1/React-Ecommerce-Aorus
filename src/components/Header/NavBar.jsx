@@ -1,6 +1,6 @@
 import './NavBar.scss';
 import { useState } from "react";
-import { Cart } from "./Cart";
+import { CartWidget } from "./CartWidget";
 import { Link, NavLink } from "react-router-dom";
 
 export const NavBar = () => {
@@ -36,7 +36,7 @@ export const NavBar = () => {
                     <Link to="/"><img src="../src/assets/apruslogo.webp" className="logo" alt="Aorus" /></Link>
 
                     <div className="d-lg-none text-white fs-2">
-                        <Cart />
+                        <CartWidget />
                     </div>
 
                     <ul className={`menu ${menuState}`}>
@@ -80,7 +80,7 @@ export const NavBar = () => {
                     <button className="btn px-2 fs-3 border-0">
                         <i className="bi bi-person-fill text-white"></i>
                     </button>
-                    <Cart />
+                    <CartWidget />
                 </div>
             </div>
         </nav>
