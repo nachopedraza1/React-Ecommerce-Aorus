@@ -18,7 +18,7 @@ export const ItemDetailContainer = () => {
 
 
   return (
-    <div>
+    <div className="pt-4">
       {
         itemDetail.map(producto=>{
           return <ItemDetail producto={producto} key={producto.id} />

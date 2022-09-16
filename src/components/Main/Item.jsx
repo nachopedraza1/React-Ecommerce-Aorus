@@ -1,9 +1,13 @@
 import "../Main/Item.scss"
 import { Link, useParams } from "react-router-dom"
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartProvider";
 
 export const Item = ({ item }) => {
 
   const { categoryId } = useParams();
+
+  const { onAddCart } = useContext(CartContext);
 
   return (
     <div className="item-container column-custom">
@@ -17,7 +21,7 @@ export const Item = ({ item }) => {
           <Link to={`/categoria/${categoryId}/${item.nombre}`}>
             <button className="btn-detail mx-1">DETAIL</button>
           </Link>
-          {/* <button onClick={()=>onAddCart(item)} className="btn-compra mx-1">COMPRAR</button> */}
+          <button onClick={() => onAddCart(item, 1)} className="btn-compra mx-1">COMPRAR</button>
         </div>
       </div>
     </div>

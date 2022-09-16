@@ -1,4 +1,4 @@
-@mixin flex ($direct,$just,$aling,$wrap) {
+@mixin flex ($direct, $just, $aling, $wrap) {
     display: flex;
     justify-content: $just;
     align-items: $aling;
@@ -6,13 +6,29 @@
 }
 
 @mixin media-up($medida) {
-    @media screen and (min-width: ($medida)){
+    @media screen and (min-width: ($medida)) {
         @content;
     }
 }
 
 @mixin media-dw($medida) {
-    @media screen and (max-width: ($medida)){
+    @media screen and (max-width: ($medida)) {
         @content;
     }
+}
+
+@mixin btn-primary {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: auto;
+    min-height: 35px;
+    width: calc(50% - 20px);
+    text-align: center;
+    transition: all .3s;
+    border: 1px solid #666;
+    color: #666;
+    font-size: 0.7rem;
+    background-color: transparent;
+    padding: 0px max-content;
 }

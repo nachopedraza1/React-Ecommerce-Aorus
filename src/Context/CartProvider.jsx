@@ -1,8 +1,11 @@
 import { createContext, useState } from "react"
+import { useProductsContext } from "./ProductosProvider";
 
 export const CartContext = createContext();
 
 export const CartProvider = (props) => {
+
+    const getProductos = useProductsContext();
 
     const [carrito, setInCart] = useState([]);
 
@@ -13,12 +16,14 @@ export const CartProvider = (props) => {
         const newCarrito = [...carrito];
         if (existe) {
             let indexProduct = newCarrito.findIndex(prod => prod.id === producto.id);
-            newCarrito[indexProduct].precio = producto.precio * count;
+            let precioOriginal = getProductos.find(prod => prod.id === producto.id);
+            newCarrito[indexProduct].precio = precioOriginal.precio * count;
             newCarrito[indexProduct].quantity = count;
             setInCart(newCarrito);
         } else {
             const newCarrito = [...carrito, {
                 ...producto,
+                quantity: count,
                 precio: producto.precio * count,
             }];
             setInCart(newCarrito);

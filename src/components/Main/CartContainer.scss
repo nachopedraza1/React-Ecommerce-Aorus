@@ -2,7 +2,20 @@
 @import "../../scss/variables";
 
 .carrito-container {
-    background-color: #2e2e2e;
-    height: 100%;
     padding-top: 15px;
+    .alert-vacio{
+        background: #202020;
+        color: #666;
+        margin: 10px;
+        border-radius: 3px;
+        h4{
+            font-size: 20px;
+            font-family: rajdhani;
+            text-align: center;
+            a{
+                text-decoration: none;
+                color: $danger;
+            }
+        }
+    }
 }

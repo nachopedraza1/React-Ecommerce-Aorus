@@ -1,0 +1,24 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.count-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+
+    .btn-counter {
+        @include btn-primary;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        background-color: #151515;
+    }
+
+    .btn-compra {
+        @include btn-primary;
+        font-size: 15px;
+        background-color: #151515;
+    }
+}

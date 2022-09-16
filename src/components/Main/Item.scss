@@ -35,19 +35,7 @@
         font-family: Titillium Web;
 
         .btn-detail {
-            position: relative;
-            display: inline-block;
-            vertical-align: top;
-            height: auto;
-            min-height: 35px;
-            width: calc(50% - 20px);
-            text-align: center;
-            transition: all .3s;
-            border: 1px solid #666;
-            color: #666; 
-            font-size: 0.7rem;
-            background-color: transparent;
-            padding: 0px max-content;
+            @include btn-primary;
         }
 
         .btn-detail:hover {
@@ -56,7 +44,7 @@
         }
 
         .btn-compra {
-            @extend .btn-detail;
+            @include btn-primary;
         }
 
         .btn-compra:hover {

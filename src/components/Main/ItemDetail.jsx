@@ -1,22 +1,15 @@
-import { useContext } from "react";
-import { CartContext } from "../../Context/CartProvider";
+import "../Main/ItemDetail.scss"
 import { ItemCount } from "./ItemCount";
 
 export const ItemDetail = ({ producto }) => {
 
-    const { onAddCart } = useContext(CartContext);
-
-    const onAdd = (count) => {
-        const newProduct = { ...producto, quantity: count }
-        onAddCart(newProduct, count)
-    }
-
     return (
-        <div>
-            <img src={`../${producto.img}`} alt="" width="30%" />
-            <h1> {producto.nombre} </h1>
-            <h1> Cantidad Disponible: {producto.cantidad} </h1>
-            <ItemCount cantidad={producto} onAdd={onAdd} />
+        <div className="detail-container">
+            <div className="thumb">
+                <h3 className="f-ars"> {producto.nombre} <span>Stock Disponible: {producto.cantidad}</span> </h3>
+                <img className="img-contained" src={`../${producto.img}`} alt="" />
+            </div>
+            <ItemCount producto={producto} />
         </div>
     )
 }
