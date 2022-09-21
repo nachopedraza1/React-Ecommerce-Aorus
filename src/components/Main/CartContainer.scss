@@ -3,16 +3,29 @@
 
 .carrito-container {
     padding-top: 15px;
-    .alert-vacio{
+
+    .carrito-header {
+        background-color: #151515;
+        border-radius: 5px;
+        margin: 10px 0px;
+        .btn-vaciar{
+            @include btn-primary;
+            width: max-content;
+        }
+    }
+
+    .alert-vacio {
         background: #202020;
         color: #666;
         margin: 10px;
         border-radius: 3px;
-        h4{
+
+        h4 {
             font-size: 20px;
             font-family: rajdhani;
             text-align: center;
-            a{
+
+            a {
                 text-decoration: none;
                 color: $danger;
             }

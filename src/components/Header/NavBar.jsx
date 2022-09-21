@@ -6,22 +6,19 @@ import { Link, NavLink } from "react-router-dom";
 export const NavBar = () => {
     const [btnState, setBtnState] = useState(false);
 
+    const [subMenuState, setSubMenuState] = useState(false);
 
     const toggleClassBtn = () => {
         setBtnState(!btnState)
     }
 
-    let btnOnState = btnState ? "is-active" : "";
-    let menuState = btnState ? "menu-active" : "";
-
-    const [subMenuState, setSubMenuState] = useState(false);
-
     const onHover = () => {
         setSubMenuState(!subMenuState);
     }
 
+    let btnOnState = btnState ? "is-active" : "";
+    let menuState = btnState ? "menu-active" : "";
     let hoverSubMenu = subMenuState ? "subMenu-active" : "";
-
 
     return (
         <nav className="top-nav">
@@ -40,11 +37,11 @@ export const NavBar = () => {
                     </div>
 
                     <ul className={`menu ${menuState}`}>
-                        <li><Link to="/">HOME</Link></li>
+                        <li onClick={toggleClassBtn} ><Link to="/">HOME</Link></li>
 
                         <span onMouseEnter={onHover} onMouseLeave={onHover}>
                             <li data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><NavLink to="">PRODUCTS <i className="fa-solid fa-chevron-down px-1"></i></NavLink></li>
-                            <div className={`subMenu collapse ${hoverSubMenu}`} id="collapseExample">
+                            <div onClick={toggleClassBtn} className={`subMenu collapse ${hoverSubMenu}`} id="collapseExample">
                                 <div className="subMenu-content">
                                     <div>
                                         <NavLink to="/categoria/motherboards">
@@ -86,8 +83,8 @@ export const NavBar = () => {
                             </div>
                         </span>
 
-                        <li><Link to="/explore">EXPLORE</Link></li>
-                        <li><Link to="/contact">CONTACT</Link></li>
+                        <li onClick={toggleClassBtn}><Link to="/explore">EXPLORE</Link></li>
+                        <li onClick={toggleClassBtn}><Link to="/contact">CONTACT</Link></li>
                     </ul>
                 </div>
 

@@ -32,14 +32,23 @@ export const ItemDetail = ({ producto }) => {
                     <p>Válido para 1 pago en efectivo, débito o transferencia bancaria.</p>
                 </div>
                 <hr />
-                <div className="border-start border-danger border-4 p-2">
-                    <h4 className="m-2">${producto.precio} <span className="badge bg-danger p-2"><p>PRECIO LISTA</p> </span></h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime ducimus tempore et inventore</p>
+                <div className="border-start border-success border-4 p-2">
+                    <h4 className="m-2">${producto.precio} <span className="badge bg-danger p-2"><p><i className="bi bi-bag-check"></i> PRECIO LISTA</p></span></h4>
+                    <p>12 Cuotas sin interes de: ${parseInt(producto.precio / 12)} </p>
+                    <p className="text-danger">Sobre precio de lista</p>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/ahora12_ch.png?alt=media&token=c3b9a9b2-390f-43fc-b9b0-4254274fdc41" alt="" />
+                </div>
+                <hr />
+                <div className="border-start border-primary border-4 p-2">
+                    <h4 className="m-2">${producto.precio} <span className="badge bg-danger p-2"><p><i className="bi bi-bag-check"></i> PRECIO LISTA</p></span></h4>
+                    <p>paga con mercado pago</p>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/logoMP.png?alt=media&token=f38f9e3f-7d5b-4361-b0b8-b767148945ab" alt="" />
                 </div>
                 <ItemCount producto={producto} />
             </div>
 
             <hr className="mt-3" />
+
         </div>
     )
 }

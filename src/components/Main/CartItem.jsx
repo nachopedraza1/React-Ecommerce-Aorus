@@ -22,25 +22,26 @@ export const CartItem = ({ producto }) => {
                 </div>
             </div>
 
-            <div className="container-lg d-none d-sm-block">
-                <table class="table text-white text-center">
-                    <thead>
-                        <tr>
-                            <th scope="col"><i className="bi bi-camera"></i></th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Precio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr className="tabla">
-                            <td> <img src={producto.img} width="100px" height="100px" alt="" /> </td>
-                            <td> <p>{producto.nombre}</p></td>
-                            <td> {producto.quantity} </td>
-                            <td> ${producto.precio} </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div className="cart-item d-none d-sm-block">
+                <div className="row align-items-center justify-content-around">
+                    <div className="col-2">
+                        <img src={producto.img} width="100%" height="100px" alt="" />
+                    </div>
+                    <div className="col-5">
+                        <p className="m-0">{producto.nombre}</p>
+                    </div>
+                    <div className="col-1">
+                        <p className="m-0">{producto.quantity}</p>
+                    </div>
+                    <div className="col-2">
+                        <p className="m-0">${producto.precio}</p>
+                    </div>
+                    <div className="col-2 text-center">
+                        <button className="btn-eliminar" onClick={() => deleteItem(producto.id)}>
+                            <i className="bi bi-trash-fill text-danger"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </>
     )
