@@ -3,16 +3,11 @@
 
 
 .detail-container {
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     .thumb {
         position: relative;
         width: 100%;
-        padding-bottom: 70%;
+        padding-bottom: 80%;
 
         .img-contained {
             position: absolute;
@@ -23,18 +18,40 @@
             margin: auto;
             max-width: 100%;
             max-height: 100%;
-            width: 80%;
+            width: 60%;
         }
     }
 
-    h3 {
-        padding: 10px;
-        color: #fff;
+    .line {
+        @include media-up(768px) {
+            border-right: 1px solid #666;
+        }
     }
 
-    span {
+    p,
+    a {
+        color: #fff;
+        font-family: Titillium Web;
+        text-transform: uppercase;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    a:hover {
         color: $danger;
-        font-size: 15px;
-        margin: 10px;
+    }
+
+    h4 {
+        @extend p;
+        font-family: rajdhani;
+    }
+
+    h3 {
+        color: #fff;
+        font-family: Aldrich;
+    }
+
+    hr {
+        color: #fff;
     }
 }

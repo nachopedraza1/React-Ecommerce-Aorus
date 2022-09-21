@@ -25,7 +25,7 @@ export const NavBar = () => {
 
     return (
         <nav className="top-nav">
-            <div className="container-xxl d-lg-flex justify-content-between f-ars">
+            <div className="container-xxl d-lg-flex justify-content-between f-ars ">
                 <div className="d-flex justify-content-between justify-content-lg-start align-items-center">
                     <button className={`hamburger hamburger--squeeze shadow-none d-lg-none ${btnOnState}`} type="button"
                         id="btnMenu" onClick={toggleClassBtn}>
@@ -47,24 +47,40 @@ export const NavBar = () => {
                             <div className={`subMenu collapse ${hoverSubMenu}`} id="collapseExample">
                                 <div className="subMenu-content">
                                     <div>
-                                        <img className="d-none d-lg-block" src="../img/categoryMothers.webp" alt="" />
-                                        <NavLink to="/categoria/motherboards">MOTHERBOARDS</NavLink>
+                                        <NavLink to="/categoria/motherboards">
+                                            <img className="d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/categoryMothers.webp?alt=media&token=24925b9d-15c6-4e42-ba05-6724e0948a2c" alt="" />
+                                            MOTHERBOARDS
+                                        </NavLink>
                                     </div>
                                     <div>
-                                        <img className="d-none d-lg-block" src="../img/categoryCards.webp" alt="" />
-                                        <NavLink to="/categoria/placasVideo">GRAFICAS</NavLink>
+                                        <NavLink to="/categoria/placasVideo">
+                                            <img className="d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/categoryCards.webp?alt=media&token=36be9435-76c4-497b-be68-9a43f2fa1752" alt="" />
+                                            GRAFICAS
+                                        </NavLink>
                                     </div>
                                     <div>
-                                        <img className="d-none d-lg-block" src="../img\productos\ram-9.png" alt="" />
-                                        <NavLink to="/categoria/memoriasRam">MEMORIAS</NavLink>
+                                        <NavLink to="/categoria/memoriasRam">
+                                            <img className="d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/categoryRams.png?alt=media&token=3a3997e2-9cfb-4525-9c6d-0ccf00eb7a75" alt="" />
+                                            MEMORIAS
+                                        </NavLink>
                                     </div>
                                     <div>
-                                        <img className="d-none d-lg-block" src="../img/categoryMonitors.webp" alt="" />
-                                        <NavLink to="/categoria/monitores">MONITORES</NavLink>
+                                        <NavLink to="/categoria/monitores">
+                                            <img className="d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/categoryMonitors.webp?alt=media&token=c784bf4f-48fc-46f0-a135-242ac3989cc9" alt="" />
+                                            MONITORES
+                                        </NavLink>
                                     </div>
                                     <div>
-                                        <img className="d-none d-lg-block" src="../img/categoryRefri.webp" alt="" />
-                                        <NavLink to="/categoria/refrigeracion">REFRIGERACION</NavLink>
+                                        <NavLink to="/categoria/refrigeracion">
+                                            <img className="d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/categoryRefri.webp?alt=media&token=b7e75e90-b08d-4d3a-9ec3-a551297d8010" alt="" />
+                                            REFRIGERACION
+                                        </NavLink>
+                                    </div>
+                                    <div>
+                                        <NavLink to="/categoria/gabinetes">
+                                            <img className="d-none d-lg-block" src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/categoryCases.webp?alt=media&token=ed4777ea-15bb-46e9-abff-f2938ae74eb9" alt="" />
+                                            GABINETES
+                                        </NavLink>
                                     </div>
                                 </div>
                             </div>

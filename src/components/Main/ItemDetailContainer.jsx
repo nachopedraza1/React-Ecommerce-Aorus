@@ -12,7 +12,7 @@ export const ItemDetailContainer = () => {
   const { detailId } = useParams();
 
   useEffect(() => {
-    const item = getProductos.filter(producto => producto.nombre == detailId);
+    const item = getProductos.filter(producto => producto.id == detailId);
     setItemDetail(item);
   }, [detailId])
 

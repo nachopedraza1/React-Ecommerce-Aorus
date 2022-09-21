@@ -16,10 +16,9 @@ export const CartContainer = () => {
             </div>
             {carrito.length === 0 && <div className='alert-vacio'><h4>CARRITO VACIO / <span><Link to="/categoria/motherboards">VER PRODUCTOS</Link></span></h4></div>}
             <div>
-                {
-                    carrito.map(producto => {
-                        return <CartItem key={producto.id} producto={producto} />
-                    })}
+                {carrito.map(producto => {
+                    return <CartItem key={producto.id} producto={producto} />
+                })}
             </div>
         </div>
     )

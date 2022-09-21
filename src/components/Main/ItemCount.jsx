@@ -10,7 +10,7 @@ export const ItemCount = ({ producto }) => {
     const [itemCount, setItemCount] = useState(1);
 
     const onAddItem = () => {
-        producto.cantidad > itemCount ? setItemCount(itemCount + 1) : null;
+        producto.stock > itemCount ? setItemCount(itemCount + 1) : null;
     }
 
     const onSubtItem = () => {
@@ -18,13 +18,16 @@ export const ItemCount = ({ producto }) => {
     }
 
     return (
-        <div className="count-container">
-            <button className="d-flex justify-content-center btn-counter">
-                <i onClick={onAddItem} className="bi bi-plus-circle-fill px-3"></i>
-                <span> {itemCount} </span>
-                <i onClick={onSubtItem} className="bi bi-dash-circle-fill px-3"></i>
-            </button>
-            <button className="btn-compra" onClick={() => onAddCart(producto, itemCount)}>Añadir</button>
-        </div>
+        <>
+            <h3 className="f-ars text-center">${producto.precio * itemCount}</h3>
+            <div className="count-container">
+                <button className="d-flex justify-content-center btn-counter">
+                    <i onClick={onAddItem} className="bi bi-plus-circle-fill px-3"></i>
+                    <span> {itemCount} </span>
+                    <i onClick={onSubtItem} className="bi bi-dash-circle-fill px-3"></i>
+                </button>
+                <button className="btn-compra" onClick={() => onAddCart(producto, itemCount)}>Añadir</button>
+            </div>
+        </>
     )
 }

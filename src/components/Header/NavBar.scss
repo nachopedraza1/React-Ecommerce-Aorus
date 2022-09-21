@@ -1,6 +1,7 @@
 @import "../../scss/mixins";
 @import "../../scss/variables";
 
+
 .top-nav {
     height: 95px;
     z-index: 999;
@@ -13,7 +14,7 @@
         width: 106px;
         height: 25px;
         margin: 0 10px;
-        
+
 
         @include media-up(992px) {
             width: 153px;
@@ -73,9 +74,11 @@
 
     .subMenu {
         padding-left: 25px;
+
         a {
             text-decoration: none;
             color: #ffffff;
+            font-size: 12px;
         }
 
         @include media-up(992px) {
@@ -100,12 +103,17 @@
 
                 div {
                     display: inline-block;
-                    max-width: 150px;
+                    max-width: 160px;
 
                     img {
-                        width: 135px;
+                        width: 122px;
                         height: 135px;
+                        margin: 0px 10px;
                     }
+                }
+
+                div:hover a {
+                    color: $danger;
                 }
             }
         }

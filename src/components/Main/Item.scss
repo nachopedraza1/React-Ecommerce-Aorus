@@ -61,18 +61,10 @@
     align-items: center;
 
     @include media-up(576px) {
-        width: 40%;
+        width: 49%;
     }
 
     @include media-up(768px) {
-        width: 45%;
-    }
-
-    @include media-up(992px) {
         width: 32%;
-    }
-
-    @include media-up(1200px) {
-        width: 30%;
     }
 }
