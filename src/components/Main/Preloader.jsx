@@ -9,7 +9,7 @@ export const Preloader = () => {
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(true);
-        }, 2000);
+        }, 100);
     }, [])
 
     const loadState = isLoading ? "loading-div active" : "loading-div show";

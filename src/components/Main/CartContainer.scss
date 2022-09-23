@@ -8,8 +8,16 @@
         background-color: #151515;
         border-radius: 5px;
         margin: 10px 0px;
-        .btn-vaciar{
+
+        .btn-vaciar {
             @include btn-primary;
+            width: max-content;
+        }
+
+        .btn-pagar {
+            @include btn-primary;
+            padding: 0px 20px;
+            font-size: 15px;
             width: max-content;
         }
     }

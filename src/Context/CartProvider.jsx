@@ -11,6 +11,11 @@ export const CartProvider = (props) => {
 
     const itemsInCart = carrito.length;
 
+    const totalSuma = () => {
+        let precios = carrito.reduce((acc, prod) => acc + prod.precio, 0);
+        return precios;
+    }
+
     const onAddCart = (producto, count) => {
         const existe = carrito.some(item => item.id === producto.id);
         const newCarrito = [...carrito];
@@ -41,7 +46,7 @@ export const CartProvider = (props) => {
     }
 
     return (
-        <CartContext.Provider value={{ carrito, onAddCart, itemsInCart, deleteItem, vaciarCarrito }}>
+        <CartContext.Provider value={{ carrito, onAddCart, itemsInCart, deleteItem, vaciarCarrito, totalSuma }}>
             {props.children}
         </CartContext.Provider>
     )
