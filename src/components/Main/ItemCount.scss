@@ -19,6 +19,18 @@
     .btn-compra {
         @include btn-primary;
         font-size: 15px;
+        font-family: rajdhani;
         background-color: #151515;
     }
+}
+
+.btn-finalizar {
+    @include btn-primary;
+    width: 100%;
+}
+
+.btn-finalizar:hover {
+    background-color: $danger;
+    border: none;
+    color: #fff;
 }

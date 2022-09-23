@@ -1,11 +1,11 @@
 import "../Main/ItemCount.scss"
-import { useContext } from "react";
-import { useState } from "react"
+import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartProvider";
+import { Link } from "react-router-dom";
 
 export const ItemCount = ({ producto }) => {
 
-    const { onAddCart } = useContext(CartContext);
+    const { itemsInCart, onAddCart } = useContext(CartContext);
 
     const [itemCount, setItemCount] = useState(1);
 
@@ -26,7 +26,10 @@ export const ItemCount = ({ producto }) => {
                     <span> {itemCount} </span>
                     <i onClick={onSubtItem} className="bi bi-dash-circle-fill px-3"></i>
                 </button>
-                <button className="btn-compra" onClick={() => onAddCart(producto, itemCount)}>Añadir</button>
+                <button className="btn-compra" onClick={() => onAddCart(producto, itemCount)}>AÑADIR</button>
+            </div>
+            <div className="d-flex justify-content-center mt-2">
+                {itemsInCart >= 1 && <Link to="/cart"><button className="btn-finalizar">FINALIZAR COMPRA</button></Link>}
             </div>
         </>
     )

@@ -1,6 +1,7 @@
 import "../Main/ItemDetail.scss"
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ItemCount } from "./ItemCount";
+
 
 export const ItemDetail = ({ producto }) => {
 
@@ -8,7 +9,7 @@ export const ItemDetail = ({ producto }) => {
         <div className="detail-container container-sm row mx-auto pt-5">
 
             <div className="d-flex flex-column flex-md-row justify-content-between align-items-center col-12 pt-3 pb-3">
-                <NavLink to={`/categoria/${producto.categoria}`}><span className="text-danger"><i className="bi bi-arrow-left-circle-fill"></i></span> VOLVER AL LISTADO</NavLink>
+                <Link to={`/categoria/${producto.categoria}`}><i className="bi bi-arrow-left-circle-fill text-danger"></i> VOLVER AL LISTADO</Link>
                 <p>productos <i className="bi bi-arrow-right text-danger mx-1"></i> {producto.categoria} </p>
             </div>
 
