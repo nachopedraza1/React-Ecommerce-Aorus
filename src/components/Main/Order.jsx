@@ -1,10 +1,7 @@
 import '../Main/Order.scss';
-import { useForm } from '../../Hooks/useForm';
 import { OrderForm } from './OrderForm';
 
 export const Order = () => {
-
-    const { orderStep } = useForm();
 
     return (
         <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -15,13 +12,10 @@ export const Order = () => {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        <OrderForm />
-                    </div>
-                    <div className="modal-footer">
-                        <button type="submit" className="btn btn-primary">Save changes</button>
+                        <OrderForm/>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
