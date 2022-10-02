@@ -4,4 +4,69 @@
 .modal-content {
     /* background-color: #2e2e2e; */
     background-color: #202020;
+
+    .modal-body {
+        .step-bar {
+            float: left;
+            font-size: 1.1em;
+            margin: 20px auto 20px auto;
+            padding: 0 0 3px;
+            position: relative;
+            width: 100%;
+            list-style: none;
+
+            a {
+                background: #151515 none repeat scroll 0 0;
+                color: #888;
+                float: left;
+                font-size: 1em;
+                height: 46px;
+                letter-spacing: 0;
+                line-height: 1.5em;
+                padding: 11px 0 8px;
+                position: relative;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                width: 25%;
+                transition: all .4s ease-in 0s;
+            }
+
+            .activee {
+                background-color: $danger;
+                color: #151515;
+            }
+
+            .activee::before {
+                border-color: transparent transparent transparent $danger;
+            }
+        }
+    }
+
+    .step-bar li a:before {
+        border-color: transparent transparent transparent #151515;
+        border-style: solid;
+        border-width: 23px 0 23px 10px;
+        content: "";
+        height: 0;
+        position: absolute;
+        right: -10px;
+        top: 0;
+        width: 0;
+        z-index: 2;
+        transition: all .4s ease-in 0s;
+    }
+
+    .step-bar li a:after {
+        border-color: transparent transparent transparent #202020;
+        border-style: solid;
+        border-width: 28px 0 28px 12px;
+        content: "";
+        height: 0;
+        position: absolute;
+        right: -12px;
+        top: -5px;
+        width: 0;
+        z-index: 1;
+    }
 }
