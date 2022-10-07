@@ -21,7 +21,7 @@ export const Order = () => {
         } else if (step === 2) {
             return <FormPayment formData={formData} onInputChange={onInputChange} onSubmitForm={onSubmitForm} />
         } else if (step === 3) {
-            return <Invoice getOrderData={getOrderData} />
+            return <Invoice />
         }
     }
 

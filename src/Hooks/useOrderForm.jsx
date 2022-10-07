@@ -84,6 +84,5 @@ export const useOrderForm = () => {
         onInputChange,
         validationForm,
         onSubmitForm,
-        getOrderData,
     }
 }

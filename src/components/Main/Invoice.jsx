@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export const Invoice = ({ getOrderData }) => {
+export const Invoice = () => {
 
     useEffect(() => {
         getOrderData()
