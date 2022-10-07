@@ -21,6 +21,7 @@
                 float: left;
                 font-size: 1em;
                 height: 46px;
+                cursor: default;
                 letter-spacing: 0;
                 line-height: 1.5em;
                 padding: 11px 0 8px;
@@ -32,12 +33,12 @@
                 transition: all .4s ease-in 0s;
             }
 
-            .activee {
+            .activeStep {
                 background-color: $danger;
                 color: #151515;
             }
 
-            .activee::before {
+            .activeStep::before {
                 border-color: transparent transparent transparent $danger;
             }
         }
@@ -68,5 +69,10 @@
         top: -5px;
         width: 0;
         z-index: 1;
+    }
+
+    .btn-steps {
+        @include btn-secondary;
+        padding: 10px 20px;
     }
 }

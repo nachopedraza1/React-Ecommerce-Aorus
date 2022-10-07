@@ -1,48 +1,34 @@
 import '../Main/Order.scss';
-import { useState } from 'react';
 import { useOrderForm } from '../../Hooks/useOrderForm';
 import { FormInfoClient } from './FormInfoClient';
 import { FormPayment } from './FormPayment';
 import { FormShipping } from './FormShipping';
-import { alertError } from '../../utils/alerts';
+import { useContext } from 'react';
+import { CartContext } from '../../Context/CartProvider';
+import { Invoice } from './Invoice';
 
 export const Order = () => {
 
-    const [step, setStep] = useState(0);
+    const { carrito } = useContext(CartContext)
 
-    const { formClient,
-        formShipping,
-        formPayment,
-        setFormClient,
-        setFormShipping,
-        setFormPayment } = useOrderForm();
+    const { step, setStep, formData, onInputChange, validationForm, onSubmitForm, getOrderData } = useOrderForm();
 
     const displayForm = () => {
         if (step === 0) {
-            return <FormInfoClient formClient={formClient} setFormClient={setFormClient} />
+            return <FormInfoClient formData={formData} onInputChange={onInputChange} />
         } else if (step === 1) {
-            return <FormShipping formShipping={formShipping} setFormShipping={setFormShipping} />
+            return <FormShipping formData={formData} onInputChange={onInputChange} />
         } else if (step === 2) {
-            return <FormPayment formPayment={formPayment} setFormPayment={setFormPayment} />
-        }
-    }
-
-    const validationForm = () => {
-        const inputsValues = [];
-        Array.from(document.querySelectorAll(".form-control")).forEach(input => {
-            inputsValues.push(input.value)
-        })
-        if (inputsValues.includes("")) {
-            alertError();
-        } else {
-            setStep(step + 1);
+            return <FormPayment formData={formData} onInputChange={onInputChange} onSubmitForm={onSubmitForm} />
+        } else if (step === 3) {
+            return <Invoice getOrderData={getOrderData} />
         }
     }
 
     const titlesSteps = ["DATOS DEL COMPRADOR", "DATOS DE ENVIO", "DATOS DEL PAGO", "FACTURA DE COMPRA"]
 
     return (
-        <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade text-white f-rad" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-xl">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -58,23 +44,46 @@ export const Order = () => {
                     <div className="modal-body">
                         <div className='col-12'>
                             <ul className='step-bar'>
-                                <li><a className={step === 0 ? "activee" : ""} href="#">DATOS</a></li>
-                                <li><a className={step === 1 ? "activee" : ""} href="#">ENVIO</a></li>
-                                <li><a className={step === 2 ? "activee" : ""} href="#">PAGO</a></li>
-                                <li><a className={step === 3 ? "activee" : ""} href="#">RESUMEN</a></li>
+                                <li><a className={step === 0 ? "activeStep" : ""} href="#">DATOS</a></li>
+                                <li><a className={step === 1 ? "activeStep" : ""} href="#">ENVIO</a></li>
+                                <li><a className={step === 2 ? "activeStep" : ""} href="#">PAGO</a></li>
+                                <li><a className={step === 3 ? "activeStep" : ""} href="#">RESUMEN</a></li>
                             </ul>
                         </div>
+                        <div className='row justify-content-between'>
+                            <div className='col-12 col-lg-7'>
+                                {displayForm()}
+                            </div>
+                            {step <= 2 ?
+                                <div className='d-none d-lg-flex flex-column col-4 mx-3'>
+                                    <h5 className='text-center f-ars text-danger m-0'>RESUMEN DE COMPRA</h5>
+                                    <hr />
+                                    {carrito.map(item => {
+                                        return (
+                                            <div className='d-flex align-items-center' key={item.id}>
+                                                <img width="100px" src={item.img} alt="" />
+                                                <p className='m-0 px-4'> {item.nombre} </p>
+                                            </div>
+                                        )
+                                    })}
+                                    <hr />
+                                </div>
+                                :
+                                null}
+                        </div>
+                    </div>
+                    {step <= 3 &&
+                        < div className="modal-footer justify-content-between">
+                            <button className="btn-steps"
+                                disabled={step === 0}
+                                onClick={() => setStep(step - 1)}>REGRESAR</button>
 
-                        {displayForm()}
-                    </div>
-                    <div className="modal-footer">
-                        <button className="btn btn-primary"
-                            disabled={step === 0}
-                            onClick={() => setStep(step - 1)}>Prev</button>
-                        <button className="btn btn-primary"
-                            disabled={step == 3}
-                            onClick={() => validationForm()}>Next</button>
-                    </div>
+                            {step < 2 ?
+                                <button className="btn-steps"
+                                    disabled={step == 3}
+                                    onClick={() => validationForm()}>CONTINUAR</button>
+                                : null}
+                        </div>}
                 </div>
             </div>
         </div >

@@ -1,10 +1,10 @@
 import { useState } from "react"
 
-export const FormShipping = ({ formShipping, setFormShipping }) => {
+export const FormShipping = ({ formData, onInputChange }) => {
 
     const [select, setSelect] = useState(0);
 
-    const { postalCode, calle, provincia, ciudad } = formShipping;
+    const { postalCode, calle, numeroCalle, provincia, ciudad } = formData;
 
     return (
         <div>
@@ -13,24 +13,27 @@ export const FormShipping = ({ formShipping, setFormShipping }) => {
                 <div className="form-check form-check-inline">
                     <input className="form-check-input"
                         type="radio"
-                        name="inlineRadioOptions"
-                        onChange={() => { setSelect(0); setFormShipping({ ...formShipping, tipoEnvio: "Domicilio" }) }} defaultChecked
+                        name="tipoEnvio"
+                        value={"Domicilio"}
+                        onChange={(e) => { setSelect(0); onInputChange(e) }} defaultChecked
                     />
                     <label className="form-check-label">Envío a domicilio</label>
                 </div>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input"
                         type="radio"
-                        name="inlineRadioOptions"
-                        onChange={() => { setSelect(1); setFormShipping({ ...formShipping, tipoEnvio: "Express" }) }}
+                        name="tipoEnvio"
+                        value={"Express"}
+                        onChange={(e) => { setSelect(1); onInputChange(e) }}
                     />
                     <label className="form-check-label" >Envio Express</label>
                 </div>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input"
                         type="radio"
-                        name="inlineRadioOptions"
-                        onChange={() => { setSelect(2); setFormShipping({ ...formShipping, tipoEnvio: "Retiro" }) }}
+                        name="tipoEnvio"
+                        value={"Retira"}
+                        onChange={(e) => { setSelect(2); onInputChange(e) }}
                     />
                     <label className="form-check-label">Retiro en Socursal</label>
                 </div>
@@ -83,37 +86,55 @@ export const FormShipping = ({ formShipping, setFormShipping }) => {
             </div>
             {
                 select == 0 || select == 1 ?
-                    <div>
-                        <div className="col-md-4">
+                    <div className="row g-3 mt-2">
+                        <div className="col-3">
                             <label className="form-label">Codigo Postal</label>
                             <input type="text"
                                 className="form-control"
-                                value={postalCode}
-                                onChange={(e) => setFormShipping({ ...formShipping, postalCode: e.target.value })}
+                                name="postalCode"
+                                value={postalCode.replace(/\s/g, '').replace(/\D/g, '')}
+                                maxLength={4}
+                                onChange={(e) => onInputChange(e)}
                             />
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-6">
                             <label className="form-label">Calle</label>
                             <input type="text"
                                 className="form-control"
-                                value={calle}
-                                onChange={(e) => setFormShipping({ ...formShipping, calle: e.target.value })}
+                                name="calle"
+                                value={calle.replace(/[0-9]/g, '')}
+                                maxLength={15}
+                                onChange={(e) => onInputChange(e)}
                             />
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-3">
+                            <label className="form-label">Numero</label>
+                            <input type="text"
+                                className="form-control"
+                                name="numeroCalle"
+                                value={numeroCalle.replace(/\D/g, '').replace(/\s/g, '')}
+                                maxLength={4}
+                                onChange={(e) => onInputChange(e)}
+                            />
+                        </div>
+                        <div className="col-6">
                             <label className="form-label">Provincia</label>
                             <input type="text"
                                 className="form-control"
-                                value={provincia}
-                                onChange={(e) => setFormShipping({ ...formShipping, provincia: e.target.value })}
+                                name="provincia"
+                                value={provincia.replace(/[0-9]/g, '').replace(/\s/g, '')}
+                                maxLength={10}
+                                onChange={(e) => onInputChange(e)}
                             />
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-6">
                             <label className="form-label">Ciudad</label>
                             <input type="text"
                                 className="form-control"
-                                value={ciudad}
-                                onChange={(e) => setFormShipping({ ...formShipping, ciudad: e.target.value })}
+                                name="ciudad"
+                                value={ciudad.replace(/\s/g, '').replace(/[0-9]/g, '').replace(/\s/g, '')}
+                                maxLength={10}
+                                onChange={(e) => onInputChange(e)}
                             />
                         </div>
                     </div>

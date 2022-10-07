@@ -44,10 +44,10 @@ export const CartContainer = () => {
                 <div className='carrito-header p-2 text-white f-rad'>
                     <div className='d-flex align-items-center justify-content-end'>
                         <p className='m-0'>TOTAL: <span className='text-danger'> $ {totalSuma()}</span></p>
-                        <button className='btn-pagar mx-3' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">PAGAR</button>
-                        <Order />
+                        <button className='btn-finalizar mx-3' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">FINALIZAR COMPRA</button>
                     </div>
                 </div>}
+            <Order />
         </div>
     )
 }
