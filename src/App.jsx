@@ -1,12 +1,12 @@
 import './App.scss'
-import { NavBar } from './components/Header/NavBar'
-import { Slider } from './components/Header/Slider'
-import { ItemListContainer } from './components/Main/ItemListContainer'
 import { Routes, Route } from "react-router-dom";
-import { ItemDetailContainer } from './components/Main/ItemDetailContainer';
 import { ProductosProvider } from './Context/ProductosProvider';
 import { CartProvider } from './Context/CartProvider';
+import { NavBar } from './components/Header/NavBar'
+import { Slider } from './components/Header/Slider'
 import { CartContainer } from './components/Main/CartContainer';
+import { ItemListContainer } from './components/Main/ItemListContainer'
+import { ItemDetailContainer } from './components/Main/ItemDetailContainer';
 
 export const App = () => {
 

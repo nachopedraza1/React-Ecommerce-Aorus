@@ -30,7 +30,7 @@ export const NavBar = () => {
                             <span className="hamburger-inner"></span>
                         </span>
                     </button>
-                    <Link to="/"><img src="../src/assets/apruslogo.webp" className="logo" alt="Aorus" /></Link>
+                    <Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/apruslogo.webp?alt=media&token=953b232b-da3e-49d2-be5a-5e5ce3480f1d" className="logo" alt="Aorus" /></Link>
 
                     <div className="d-lg-none text-white fs-2">
                         <CartWidget />
@@ -89,7 +89,7 @@ export const NavBar = () => {
                 </div>
 
                 <div className="d-none d-lg-flex align-items-center fs-2">
-                    <img className="d-none d-lg-block m-2" src="../src/assets/gigabytelogo.webp" width="120rem" alt="" />
+                    <img className="d-none d-lg-block m-2" src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/gigabytelogo.webp?alt=media&token=ab55d531-febf-4dc4-b4c4-f09ca4404b70" width="120rem" alt="" />
                     <button className="btn px-2 fs-3 border-0">
                         <i className="bi bi-person-fill text-white"></i>
                     </button>

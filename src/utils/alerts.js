@@ -30,7 +30,7 @@ export const alertSuccess = () => {
 }
 
 
-export const alertSubmit = (setStep) => {
+export const alertSubmit = (setStep, vaciarCarrito) => {
     let timerInterval
     Swal.fire({
         title: '<p class="f-rad m-0 text-uppercase">PROCESANDO PAGO</p>',
@@ -39,21 +39,16 @@ export const alertSubmit = (setStep) => {
         /*  timerProgressBar: true, */
         didOpen: () => {
             Swal.showLoading()
-            const b = Swal.getHtmlContainer().querySelector('b')
-            timerInterval = setInterval(() => {
-                b.textContent = Swal.getTimerLeft()
-            }, 100)
         },
         willClose: () => {
             clearInterval(timerInterval)
         }
     }).then((result) => {
-        /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
             alertSuccess();
             setTimeout(() => {
                 setStep(3)
+                vaciarCarrito();
             }, 3000);
         }
     })

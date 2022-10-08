@@ -1,12 +1,12 @@
-import { addDoc, collection } from "firebase/firestore";
 import { useContext, useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
 import { CartContext } from "../Context/CartProvider";
 import { alertError, alertSubmit } from "../utils/alerts";
 import { dataBase } from "../utils/firebase";
 
 export const useOrderForm = () => {
 
-    const { carrito, vaciarCarrito } = useContext(CartContext);
+    const { carrito, totalSuma, vaciarCarrito } = useContext(CartContext);
 
     const [invoice, setInvoice] = useState();
 
@@ -52,19 +52,40 @@ export const useOrderForm = () => {
         }
     }
 
+    const {
+        nombre,
+        dni,
+        email,
+        telefono,
+        tipoEnvio,
+        postalCode,
+        calle,
+        numeroCalle,
+        provincia,
+        ciudad, } = formData;
+
     const onSubmitForm = (e) => {
         e.preventDefault();
         if (validationForm()) {
-            vaciarCarrito();
             setStep(2)
-            alertSubmit(setStep)
+            alertSubmit(setStep, vaciarCarrito)
             const order = {
                 cliente: {
-                    ...formData,
+                    nombre,
+                    dni,
+                    email,
+                    telefono,
                 },
-                items: {
-                    ...carrito
-                }
+                envio: {
+                    tipoEnvio,
+                    postalCode,
+                    calle,
+                    numeroCalle,
+                    provincia,
+                    ciudad,
+                },
+                items: [...carrito],
+                total : totalSuma()
             }
 
             const queryRef = collection(dataBase, "orders")
@@ -84,5 +105,6 @@ export const useOrderForm = () => {
         onInputChange,
         validationForm,
         onSubmitForm,
+        invoice,
     }
 }

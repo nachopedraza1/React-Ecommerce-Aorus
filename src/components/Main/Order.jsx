@@ -11,7 +11,7 @@ export const Order = () => {
 
     const { carrito } = useContext(CartContext)
 
-    const { step, setStep, formData, onInputChange, validationForm, onSubmitForm, getOrderData } = useOrderForm();
+    const { step, setStep, formData, onInputChange, validationForm, onSubmitForm, invoice } = useOrderForm();
 
     const displayForm = () => {
         if (step === 0) {
@@ -21,7 +21,7 @@ export const Order = () => {
         } else if (step === 2) {
             return <FormPayment formData={formData} onInputChange={onInputChange} onSubmitForm={onSubmitForm} />
         } else if (step === 3) {
-            return <Invoice />
+            return <Invoice invoice={invoice} />
         }
     }
 
@@ -47,13 +47,11 @@ export const Order = () => {
                                 <li><a className={step === 0 ? "activeStep" : ""} href="#">DATOS</a></li>
                                 <li><a className={step === 1 ? "activeStep" : ""} href="#">ENVIO</a></li>
                                 <li><a className={step === 2 ? "activeStep" : ""} href="#">PAGO</a></li>
-                                <li><a className={step === 3 ? "activeStep" : ""} href="#">RESUMEN</a></li>
+                                <li><a className={step === 3 ? "activeStep" : ""} href="#">FACTURA</a></li>
                             </ul>
                         </div>
-                        <div className='row justify-content-between'>
-                            <div className='col-12 col-lg-7'>
-                                {displayForm()}
-                            </div>
+                        <div className='row justify-content-between align-items-start'>
+                            {displayForm()}
                             {step <= 2 ?
                                 <div className='d-none d-lg-flex flex-column col-4 mx-3'>
                                     <h5 className='text-center f-ars text-danger m-0'>RESUMEN DE COMPRA</h5>
@@ -72,7 +70,7 @@ export const Order = () => {
                                 null}
                         </div>
                     </div>
-                    {step <= 3 &&
+                    {step <= 2 &&
                         < div className="modal-footer justify-content-between">
                             <button className="btn-steps"
                                 disabled={step === 0}

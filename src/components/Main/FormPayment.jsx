@@ -34,12 +34,14 @@ export const FormPayment = ({ formData, onInputChange, onSubmitForm }) => {
 
 
   return (
-    <div>
+    <div className='col-12 col-lg-7'>
       <div className={`tarjeta col-12 col-sm-10 col-md-9 col-lg-6 col-xl-4 mx-auto ${cardClass}`} onClick={onClickCard}>
         <div className="delantera">
           <div className="logo-marca" id="logo-marca">
+            {cardNumber[0] <= 4 && <img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/visa.png?alt=media&token=c3c8ec06-4c80-4264-81fb-b869beb8e2ee" alt="" />}
+            {cardNumber[0] >= 5 && <img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/mastercard.png?alt=media&token=4f86729f-4ed4-473a-84da-7167e5b90de6" alt="" />}
           </div>
-          <img src="../img/tarjeta/chip-tarjeta.png" className="chip" alt="" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/chip-tarjeta.png?alt=media&token=4f40bc1b-b913-449f-aecd-645a64f030a3" className="chip" alt="" />
           <div className="datos">
             <div className="grupo" >
               <p className="m-0 label">Número Tarjeta</p>

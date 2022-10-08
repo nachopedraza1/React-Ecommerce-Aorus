@@ -7,7 +7,7 @@ export const FormShipping = ({ formData, onInputChange }) => {
     const { postalCode, calle, numeroCalle, provincia, ciudad } = formData;
 
     return (
-        <div>
+        <div className="col-12 col-lg-7">
             <div className="text-center">
                 <h4 className="text-center">Selecciona la forma de envío preferida para la entrega de este pedido.</h4>
                 <div className="form-check form-check-inline">

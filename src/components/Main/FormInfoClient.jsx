@@ -5,7 +5,7 @@ export const FormInfoClient = ({ formData, onInputChange }) => {
     const { nombre, dni, email, telefono } = formData;
 
     return (
-        <div className='row g-3'>
+        <div className='row g-3 col-12 col-lg-7'>
             <div className="col-sm-7">
                 <label className="form-label">Nombre y Apellido</label>
                 <input type="text"
