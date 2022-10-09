@@ -1,0 +1,169 @@
+
+.product-line-div {
+    padding-top: 80px;
+    position: relative;
+    width: 220px;
+
+    .product-div {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        text-align: center;
+
+        .box {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        img {
+            display: inline-block;
+            width: 200px;
+            transition: all 0.3s;
+        }
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        .name {
+            position: relative;
+            margin-top: 16px;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 33px;
+            text-align: center;
+            padding: 4px 6px;
+            color: #8e8e8e;
+            transition: all 0.3s;
+            font-family: Aldrich;
+        }
+
+        &:hover .name {
+            color: #ff6400;
+            font-size: 20px;
+            line-height: 44px;
+        }
+
+        .name {
+            span {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: 0;
+            }
+
+            &:after,
+            &:before {
+                content: "";
+                position: absolute;
+                border-color: #ff6400;
+                box-sizing: border-box;
+                border-style: solid;
+                width: 10px;
+                height: 10px;
+                transition: all .3s ease-in-out;
+                opacity: 0;
+            }
+
+            span {
+
+                &:after,
+                &:before {
+                    content: "";
+                    position: absolute;
+                    border-color: #ff6400;
+                    box-sizing: border-box;
+                    border-style: solid;
+                    width: 10px;
+                    height: 10px;
+                    transition: all .3s ease-in-out;
+                    opacity: 0;
+                }
+            }
+
+            &:before {
+                top: 50%;
+                left: 50%;
+                border-width: 0 0 0 0;
+                z-index: 5;
+            }
+
+            &:after {
+                bottom: 50%;
+                right: 50%;
+                border-width: 0 0 0 0;
+            }
+
+            span {
+                &:before {
+                    top: 50%;
+                    right: 50%;
+                    border-width: 0 0 0 0;
+                    z-index: 5;
+                }
+
+                &:after {
+                    bottom: 50%;
+                    left: 50%;
+                    border-width: 0 0 0 0;
+                }
+            }
+        }
+
+        &:hover .name {
+
+            &:after,
+            &:before {
+                display: block;
+                width: 10px;
+                height: 10px;
+                border-color: #ff6400;
+                opacity: 1;
+            }
+
+            span {
+
+                &:after,
+                &:before {
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    border-color: #ff6400;
+                    opacity: 1;
+                }
+            }
+
+            &:before {
+                top: 0;
+                left: 0;
+                border-width: 2px 0 0 2px;
+                z-index: 5;
+            }
+
+            &:after {
+                bottom: 0;
+                right: 0;
+                border-width: 0 2px 2px 0;
+            }
+
+            span {
+                &:before {
+                    top: 0;
+                    right: 0;
+                    z-index: 5;
+                    border-width: 2px 2px 0 0;
+                }
+
+                &:after {
+                    bottom: 0;
+                    left: 0;
+                    border-width: 0 0 2px 2px;
+                }
+            }
+        }
+    }
+}

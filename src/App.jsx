@@ -2,11 +2,12 @@ import './App.scss'
 import { Routes, Route } from "react-router-dom";
 import { ProductosProvider } from './Context/ProductosProvider';
 import { CartProvider } from './Context/CartProvider';
-import { NavBar } from './components/Header/NavBar'
-import { Slider } from './components/Header/Slider'
+import { Home } from './components/Main/Home';
+import { NavBar } from './components/Header/NavBar';
 import { CartContainer } from './components/Main/CartContainer';
 import { ItemListContainer } from './components/Main/ItemListContainer'
 import { ItemDetailContainer } from './components/Main/ItemDetailContainer';
+import { Footer } from './components/Footer/Footer';
 
 export const App = () => {
 
@@ -16,11 +17,12 @@ export const App = () => {
         <CartProvider>
           <NavBar />
           <Routes>
-            <Route path="/" element={<Slider />} />
+            <Route path="/" element={<Home />} />
             <Route path="/categoria/:categoryId" element={<ItemListContainer />} />
             <Route path="/categoria/:categoryId/:detailId" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartContainer />} />
           </Routes>
+          <Footer />
         </CartProvider>
       </ProductosProvider>
     </>

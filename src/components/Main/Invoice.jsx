@@ -31,7 +31,7 @@ export const Invoice = ({ invoice }) => {
                 <div>
                     <p>Fecha: <span>{nowDate}</span></p>
                     <p>ID de Compra : <span>{invoice.id}</span></p>
-                    <img className="logo-invoice" src="src\assets\apruslogo.webp" alt="" />
+                    <img className="logo-invoice" src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/aorus.webp?alt=media&token=c5f6d70f-1dad-4b6b-870a-dc1ffa9a76a7" alt="" />
                 </div>
             </div>
             <hr />

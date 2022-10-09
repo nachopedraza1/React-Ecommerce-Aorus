@@ -1,10 +1,10 @@
 import '../Main/Order.scss';
+import { useContext } from 'react';
+import { CartContext } from '../../Context/CartProvider';
 import { useOrderForm } from '../../Hooks/useOrderForm';
 import { FormInfoClient } from './FormInfoClient';
 import { FormPayment } from './FormPayment';
 import { FormShipping } from './FormShipping';
-import { useContext } from 'react';
-import { CartContext } from '../../Context/CartProvider';
 import { Invoice } from './Invoice';
 
 export const Order = () => {

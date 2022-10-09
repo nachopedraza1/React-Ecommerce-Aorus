@@ -18,6 +18,57 @@ export const alertError = () => {
     });
 }
 
+export const alertOnAddProduct = () => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '<p class="f-rad m-0 text-uppercase">Producto Agregado al Carrito.</p>',
+        showConfirmButton: false,
+        timer: 2000,
+        toast: true,
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    });
+}
+
+export const alertDeleteProduct = () => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '<p class="f-rad m-0 text-uppercase">Producto Eliminado.</p>',
+        showConfirmButton: false,
+        timer: 2000,
+        toast: true,
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    });
+}
+
+export const alertClearCart = () => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'info',
+        title: '<p class="f-rad m-0 text-uppercase">Carrito Vacio.</p>',
+        showConfirmButton: false,
+        timer: 2000,
+        toast: true,
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    });
+}
+
 export const alertSuccess = () => {
     Swal.fire({
         position: 'top-center',

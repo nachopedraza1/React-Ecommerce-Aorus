@@ -30,7 +30,7 @@ export const NavBar = () => {
                             <span className="hamburger-inner"></span>
                         </span>
                     </button>
-                    <Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/apruslogo.webp?alt=media&token=953b232b-da3e-49d2-be5a-5e5ce3480f1d" className="logo" alt="Aorus" /></Link>
+                    <Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/aorus.webp?alt=media&token=c5f6d70f-1dad-4b6b-870a-dc1ffa9a76a7" className="logo" alt="Aorus" /></Link>
 
                     <div className="d-lg-none text-white fs-2">
                         <CartWidget />

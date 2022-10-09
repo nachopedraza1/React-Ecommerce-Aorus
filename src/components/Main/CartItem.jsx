@@ -24,8 +24,8 @@ export const CartItem = ({ producto }) => {
 
             <div className="cart-item d-none d-sm-block">
                 <div className="row align-items-center justify-content-around">
-                    <div className="col-2">
-                        <img src={producto.img} width="100%" height="100px" alt="" />
+                    <div className="col-2 thumb d-flex align-items-center">
+                        <img src={producto.img} width="100%" alt="" />
                     </div>
                     <div className="col-5">
                         <p className="m-0">{producto.nombre}</p>

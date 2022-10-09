@@ -1,4 +1,5 @@
 import { createContext, useState } from "react"
+import { alertClearCart, alertDeleteProduct, alertOnAddProduct } from "../utils/alerts";
 import { useProductsContext } from "./ProductosProvider";
 
 export const CartContext = createContext();
@@ -17,6 +18,7 @@ export const CartProvider = (props) => {
     }
 
     const onAddCart = (producto, count) => {
+        alertOnAddProduct();
         const existe = carrito.some(item => item.id === producto.id);
         const newCarrito = [...carrito];
         if (existe) {
@@ -36,12 +38,14 @@ export const CartProvider = (props) => {
     }
 
     const deleteItem = (id) => {
+        alertDeleteProduct();
         let index = carrito.findIndex(item => item.id === id);
         carrito.splice(index, 1);
         setInCart([...carrito]);
     }
 
     const vaciarCarrito = () => {
+        alertClearCart();
         setInCart([]);
     }
 

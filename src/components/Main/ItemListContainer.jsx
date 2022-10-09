@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useProductsContext } from "../../Context/ProductosProvider";
 import { Filter } from "./Filter";
 import { Preloader } from "./Preloader";
+import { OwlCategories } from "./OwlCategories";
 
 export const ItemListContainer = () => {
 
@@ -24,10 +25,12 @@ export const ItemListContainer = () => {
     setProductos(productsFilter);
   }
 
+
   return (
     <>
       <Preloader />
-      <div onLoad={onload} className="container-items container-xl mx-auto pt-4 row">
+      <OwlCategories />
+      <div className="container-items container-xl mx-auto pt-4 row">
         <div>
           <h3 className="pt-5 m-0 text-center text-danger f-ars">{categoryId.toUpperCase()}</h3>
           <div className="div-line mb-3">
