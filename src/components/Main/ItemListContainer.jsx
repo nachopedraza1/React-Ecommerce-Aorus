@@ -34,8 +34,8 @@ export const ItemListContainer = () => {
         <div>
           <h3 className="pt-5 m-0 text-center text-danger f-ars">{categoryId.toUpperCase()}</h3>
           <div className="div-line mb-3">
-            <span className="div-line__one"><img src="../img/pattern-2.svg" alt="" /></span>
-            <span className="div-line__two"><img src="../img/pattern-1.svg" alt="" /></span>
+            <span className="div-line__one"><img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/pattern-2.svg?alt=media&token=0b50e110-1b3e-4d9d-b515-3b595243e20d" alt="" /></span>
+            <span className="div-line__two"><img src="https://firebasestorage.googleapis.com/v0/b/aorus-ecommerce-app.appspot.com/o/pattern-1.svg?alt=media&token=9406ff77-d972-4268-8d2d-2d1cc741cfad" alt="" /></span>
           </div>
         </div>
         <Filter onFilter={onFilter} totalItems={productos.length} />

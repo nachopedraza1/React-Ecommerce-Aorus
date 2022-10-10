@@ -10,7 +10,7 @@ export const Invoice = ({ invoice }) => {
     return (
         <div className="invoice-container">
             <h3 className="text-center text-danger">GRACIAS POR TU COMPRA!</h3>
-            <a href="/" className='text-danger'><i class="bi bi-arrow-left"></i> VOLVER AL INICIO</a>
+            <a href="/" className='text-danger'><i className="bi bi-arrow-left"></i> VOLVER AL INICIO</a>
             <hr />
             <div className="d-flex flex-column flex-sm-row justify-content-between">
                 <div>
@@ -47,23 +47,23 @@ export const Invoice = ({ invoice }) => {
                         <p className='m-0'>PRECIO</p>
                     </div>
                 </div>
-                <div className="d-flex align-items-center p-2 text-center">
-                    <div className='col-7 text-start'>
-                        {items.map(producto => {
-                            return <p>{producto.nombre} </p>
-                        })}
-                    </div>
-                    <div className='col-1'>
-                        {items.map(producto => {
-                            return <p>{producto.quantity} </p>
-                        })}
-                    </div>
-                    <div className='col-4'>
-                        {items.map(producto => {
-                            return <p>$ {producto.precio} </p>
-                        })}
-                    </div>
-                </div>
+
+                {items.map(producto => {
+                    return (
+                        <div className="d-flex align-items-center p-2 text-center" key={producto.id}>
+                            <div className='col-7 text-start'>
+                                <p key={producto.id} >{producto.nombre} </p>
+                            </div>
+                            <div className='col-1'>
+                                <p key={producto.id}>{producto.quantity} </p>
+                            </div>
+                            <div className='col-4'>
+                                <p key={producto.id}>$ {producto.precio} </p>
+                            </div>
+                        </div>
+                    )
+                })}
+
                 <hr />
                 <div className="col-12 text-end px-3">
                     <h4>TOTAL: <span className="text-danger">${invoice.total}</span></h4>
